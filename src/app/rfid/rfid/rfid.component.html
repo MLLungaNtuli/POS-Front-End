@@ -1,0 +1,10 @@
+<div>
+    <h2>Scan RFID Tag</h2>
+    <mat-form-field appearance="fill">
+      <mat-label>RFID Tag</mat-label>
+      <input matInput [(ngModel)]="rfidTag" required />
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" (click)="scanRfid()">Scan</button>
+  </div>
+  
