@@ -29,4 +29,13 @@ export class AuthService {
     const { error } = await supabase.auth.signOut();
     return error;
   }
+
+  async getSession() {
+    const { data, error } = await supabase.auth.getSession();
+    if (error) {
+      console.error('Error fetching session', error);
+      return null;
+    }
+    return data?.session;
+  }
 }

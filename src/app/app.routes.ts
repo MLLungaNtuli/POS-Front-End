@@ -6,17 +6,14 @@ import { InventoryComponent } from './inventory/inventory/inventory.component';
 import { RfidComponent } from './rfid/rfid/rfid.component';
 
 export const routes: Routes = [
-    { path: '', component: DashboardComponent },
+    { path: '', component: LoginComponent },
+    { path: 'dashboard', component: DashboardComponent },
     { path: 'inventory', component: InventoryComponent },
     { path: 'rfid', component: RfidComponent },
-    { path: 'login', component: LoginComponent },
-  ];
-  
-  @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule],
-  })
-  export class AppRoutingModule {}
+];
 
-
-  
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],  // Make sure to use forRoot
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}

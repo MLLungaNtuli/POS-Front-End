@@ -1,6 +1,7 @@
-<div class="login-container">
-    <h2>Login</h2>
-    <form (ngSubmit)="onLogin()">
+<div class="login-container" *ngIf="!isAuthenticated">
+    <h2>{{ showSignUp ? 'Sign Up' : 'Log In' }}</h2>
+    <!-- Login/Signup Form -->
+    <form (ngSubmit)="onSubmit()">
       <mat-form-field appearance="fill">
         <mat-label>Email</mat-label>
         <input matInput type="email" [(ngModel)]="email" name="email" required />
@@ -11,7 +12,12 @@
         <input matInput type="password" [(ngModel)]="password" name="password" required />
       </mat-form-field>
   
-      <button mat-raised-button color="primary" type="submit">Login</button>
+      <button mat-raised-button color="primary" type="submit">{{ showSignUp ? 'Sign Up' : 'Log In' }}</button>
     </form>
+  
+    <!-- Toggle Link -->
+    <p (click)="toggleSignUp()" class="toggle-link">
+      {{ showSignUp ? 'Already have an account? Log In' : 'Need an account? Sign Up' }}
+    </p>
   </div>
   

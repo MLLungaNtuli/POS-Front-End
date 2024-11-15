@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class RfidService {
-  private apiUrl = 'YOUR_DOTNET_CORE_MIDDLEWARE_URL'; // URL of your middleware
+  private apiUrl = 'http:localhost:500'; // URL of your middleware exapmle that will communicate with advanCloud
 
   constructor(private http: HttpClient) {}
 
